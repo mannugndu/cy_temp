@@ -1,26 +1,8 @@
 version: 2.1
-executors:
-  my-custom-executor:
-    docker:
-      - image: cimg/node
-        auth:
-          username: manjitgalaxy  # can specify string literal values
-          password: Dockerhub#123
-      
-jobs:
-  my-job-name:
-    environment:
-      testenv: setbyme_testenv
-    executor: my-custom-executor
-    steps:
-      - checkout
-      - run: |
-          npm install && npx cypress run
+orbs:
+  cypress: cypress-io/cypress@1.29.0
 
 workflows:
-  my-custom-workflow:
-    jobs:
-      - my-job-name:
-          context:
-            - build-env-vars
-            - docker-hub-creds
+    example-workflow:
+      jobs:
+        - cypress/run
