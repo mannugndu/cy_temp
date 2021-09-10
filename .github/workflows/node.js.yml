@@ -25,10 +25,12 @@ jobs:
   job2:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: My job
+      - name: "Checkout V2"
+        uses: actions/checkout@v2
+      - name: SETUP NODE
         uses: actions/setup-node@v2
-      - run: |
+      - name: RUNNING SHELL COMMANDS
+        run: |
           echo This is a simeplemessage
           echo $SHELL
           pwd
