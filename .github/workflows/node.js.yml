@@ -27,5 +27,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: My job
+        uses: actions/setup-node@v2
       - run: echo "the second job is running"
  
