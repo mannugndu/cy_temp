@@ -35,4 +35,5 @@ jobs:
           echo $SHELL
           pwd
           ls
+          echo "end"
  
