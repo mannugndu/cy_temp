@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@applitools/eyes-cypress": "^3.22.5",
     "cypress": "8.2.0",
     "cypress-mochawesome-reporter": "^2.2.1"
   },

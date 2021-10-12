@@ -1,3 +1,5 @@
-import 'cypress-mochawesome-reporter/register';
+
+import '@applitools/eyes-cypress/commands'
+
 import './commands'
 
