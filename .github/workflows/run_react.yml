@@ -1,0 +1,24 @@
+# Example of checking out to another repo
+name: Run react
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  base-job:
+    runs-on: ubuntu-latest   
+    steps:
+      - name: "Checkout V2"
+        uses: actions/checkout@v2
+        with:
+          repository: aditya-sridhar/simple-reactjs-app
+          path: './
+      - name: RUNNING SHELL COMMANDS FOR BASE JOB
+        run: |
+          echo RUNNING SHELL COMMANDS FOR BASE JOB                 
+          pwd
+          echo ============================
+          ls         
