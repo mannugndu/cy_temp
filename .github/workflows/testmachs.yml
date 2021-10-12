@@ -16,7 +16,9 @@ jobs:
           echo RUNNING SHELL COMMANDS FOR BASE JOB
           echo $SHELL
           pwd
+          echo ============================
           ls
+          echo ============================
           mkdir myfolder1
           ls
 
@@ -29,7 +31,8 @@ jobs:
         run: |
           echo RUNNING SHELL COMMANDS FOR JOB 1
           echo $SHELL
-          pwd
+          pwd   
+          echo ============================     
           ls
           mkdir myfolder2
           ls
@@ -44,6 +47,8 @@ jobs:
           echo RUNNING SHELL COMMANDS FOR JOB 2
           echo $SHELL
           pwd
+          echo ============================
           ls
           mkdir myfolder3
+          echo ============================
           ls
