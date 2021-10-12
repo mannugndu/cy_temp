@@ -18,6 +18,7 @@ jobs:
           pwd
           ls
           mkdir myfolder1
+          ls
 
   job-1:
     runs-on: ubuntu-latest
@@ -31,6 +32,7 @@ jobs:
           pwd
           ls
           mkdir myfolder2
+          ls
 
   job-2:
     runs-on: ubuntu-latest
@@ -44,3 +46,4 @@ jobs:
           pwd
           ls
           mkdir myfolder3
+          ls
