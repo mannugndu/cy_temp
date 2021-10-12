@@ -27,8 +27,6 @@ jobs:
     steps:
       - name: "Checkout V2"
         uses: actions/checkout@v2
-      - name: SETUP NODE
-        uses: actions/setup-node@v2
       - name: RUNNING SHELL COMMANDS
         run: |
           echo This is a simeplemessage
