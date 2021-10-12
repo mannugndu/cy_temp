@@ -9,8 +9,7 @@ on:
 jobs:
   base-job:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+    steps:     
       - name: RUNNING SHELL COMMANDS FOR BASE JOB
         run: |
           echo RUNNING SHELL COMMANDS FOR BASE JOB
