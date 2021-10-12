@@ -21,9 +21,10 @@ jobs:
         cache: 'npm'
     - run: npm i
     - name: cypress tests 
-      run: npx cypress run
+      run: npx cypress run --record
       env:
         APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+        CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
     
   job2:
     runs-on: ubuntu-latest

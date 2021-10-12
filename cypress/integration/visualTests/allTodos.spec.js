@@ -13,7 +13,6 @@ describe("ToDo HomePage Tests - All Todos", () => {
 
     allTodoPage.visit();
     cy.eyesCheckWindow("Home Page");
-    cy.eyesClose();
   });
 
   it("Should be able to add todo", () => {
@@ -25,7 +24,6 @@ describe("ToDo HomePage Tests - All Todos", () => {
     });
     allTodoPage.visit().addNewTodo(newTodo);
     cy.eyesCheckWindow("Check added todos");
-    cy.eyesClose();
   });
 
   it("Should be able to mark the todo items as completed", () => {
@@ -36,6 +34,9 @@ describe("ToDo HomePage Tests - All Todos", () => {
     });
     allTodoPage.visit().markTodoAsCompleted(targetTodo);
     cy.eyesCheckWindow("Check completed todos");
-    cy.eyesClose();
   });
+});
+
+afterEach(() => {
+  cy.eyesClose();
 });
