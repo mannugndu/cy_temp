@@ -7,5 +7,5 @@ workflows:
       jobs:
         - cypress/run:
             context: cypress_keys_temp 
-            record: true
+            record: false
             store_artifacts: true
