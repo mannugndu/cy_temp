@@ -31,8 +31,6 @@ describe("ToDo HomePage Tests - All Todos", () => {
       .assertTodoIsCompleted(targetTodo);
   });
 
-  // it("another test",()=>{
 
-  // })
 
 });
