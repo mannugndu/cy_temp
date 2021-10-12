@@ -12,9 +12,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      env:
-        APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+    steps:      
     - uses: actions/checkout@v2
     - name: Using node version 12
       uses: actions/setup-node@v2
@@ -22,7 +20,10 @@ jobs:
         node-version: 12.x
         cache: 'npm'
     - run: npm i
-    - run: npx cypress run
+    - name: cypress tests 
+      run: npx cypress run
+      env:
+        APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
     
   job2:
     runs-on: ubuntu-latest
