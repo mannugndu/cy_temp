@@ -15,6 +15,7 @@ jobs:
         run: |
           echo RUNNING SHELL COMMANDS FOR BASE JOB
           echo $SHELL
+          cd /
           pwd
           echo ============================
           ls
@@ -32,6 +33,7 @@ jobs:
         run: |
           echo RUNNING SHELL COMMANDS FOR JOB 1
           echo $SHELL
+          cd /
           pwd   
           echo ============================     
           ls
@@ -49,6 +51,7 @@ jobs:
         run: |
           echo RUNNING SHELL COMMANDS FOR JOB 2
           echo $SHELL
+          cd /
           pwd
           echo ============================
           ls
