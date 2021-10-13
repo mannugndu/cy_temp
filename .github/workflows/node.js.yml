@@ -27,7 +27,7 @@ jobs:
           ls         
           echo ============================
           npm install
-          npm run start
+          npm run start &
       - name: (CY) - Checkout to Base repo
           uses: actions/checkout@v2
           with:
