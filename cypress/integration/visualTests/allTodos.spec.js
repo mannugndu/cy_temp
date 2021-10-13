@@ -32,7 +32,7 @@ describe("ToDo HomePage Tests - All Todos", () => {
       appName: "Todo App",
       testName: "Should be able to mark the todo items as completed",
     });
-    allTodoPage.visit().markTodoAsCompleted(targetTodo);
+    allTodoPage.visit();
     cy.eyesCheckWindow("Check completed todos marked");
   });
 });
