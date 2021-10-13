@@ -28,27 +28,48 @@ jobs:
           echo ============================
           npm install
           npm run start
+      - name: (CY) - Checkout to Base repo
+          uses: actions/checkout@v2
+          with:
+            path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
+      - name: (CY) - Using node version 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x        
+      - name: (CY) - Install npm dependencies
+        working-directory: cypress_tests
+        run: npm i
+      - name:(CY) -  cypress tests 
+        working-directory: cypress_tests
+        run: npx cypress run --record
+        env:
+          APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+          CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
+      - name: (CY) - PRINT INFO
+        working-directory: cypress_tests
+        run: pwd
 
-  run-cypress-tests:
-    runs-on: ubuntu-latest   
-    steps:      
-    - uses: actions/checkout@v2
-      with:
-        path: './cypress_tests'
-    - name: Using node version 12
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x        
-    - name: Install npm dependencies
-      working-directory: cypress_tests
-      run: npm i
-    - name: cypress tests 
-      working-directory: cypress_tests
-      run: npx cypress run --record
-      env:
-        APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
-        CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
-    - name: PRINT INFO
-      working-directory: cypress_tests
-      run: pwd
+  # run-cypress-tests:
+  #   runs-on: ubuntu-latest   
+  #   steps:      
+  #   - name: Checkout to Base repo
+  #     uses: actions/checkout@v2
+  #     with:
+  #       path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
+  #   - name: Using node version 12
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: 12.x        
+  #   - name: Install npm dependencies
+  #     working-directory: cypress_tests
+  #     run: npm i
+  #   - name: cypress tests 
+  #     working-directory: cypress_tests
+  #     run: npx cypress run --record
+  #     env:
+  #       APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+  #       CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
+  #   - name: PRINT INFO
+  #     working-directory: cypress_tests
+  #     run: pwd
  
