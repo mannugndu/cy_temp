@@ -17,6 +17,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: aditya-sridhar/simple-reactjs-app
+          path: './react_app_folder'
       - name: RUNNING SHELL COMMANDS FOR BASE JOB
         run: |
           echo RUNNING SHELL COMMANDS FOR BASE JOB                 
@@ -31,6 +32,8 @@ jobs:
     runs-on: ubuntu-latest   
     steps:      
     - uses: actions/checkout@v2
+      with:
+        path: './cypress_tests'
     - name: Using node version 12
       uses: actions/setup-node@v2
       with:
@@ -42,4 +45,6 @@ jobs:
       env:
         APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
         CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
+    - name: PRINT INFO
+      run: pwd
  
