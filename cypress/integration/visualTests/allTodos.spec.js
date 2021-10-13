@@ -8,11 +8,11 @@ describe("ToDo HomePage Tests - All Todos", () => {
   it("Should display 2 todos by default", () => {
     cy.eyesOpen({
       appName: "Todo App",
-      testName: "Default todos",
+      testName: "Should display 2 todos by default",
     });
 
     allTodoPage.visit();
-    cy.eyesCheckWindow("Home Page of todo");
+    cy.eyesCheckWindow("Home Page of todo app");
   });
 
   it("Should be able to add todo", () => {
@@ -20,20 +20,20 @@ describe("ToDo HomePage Tests - All Todos", () => {
 
     cy.eyesOpen({
       appName: "Todo App",
-      testName: "Add todos",
+      testName: "Should be able to add todo",
     });
     allTodoPage.visit().addNewTodo(newTodo);
-    cy.eyesCheckWindow("Check added todos");
+    cy.eyesCheckWindow("Checking new added todos");
   });
 
   it("Should be able to mark the todo items as completed", () => {
     const targetTodo = todos[0];
     cy.eyesOpen({
       appName: "Todo App",
-      testName: "Complete todos",
+      testName: "Should be able to mark the todo items as completed",
     });
     allTodoPage.visit().markTodoAsCompleted(targetTodo);
-    cy.eyesCheckWindow("Check completed todos");
+    cy.eyesCheckWindow("Check completed todos marked");
   });
 });
 
