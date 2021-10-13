@@ -20,8 +20,12 @@ describe("ToDo HomePage Tests - All Todos", () => {
   });
 
   it("Should be able to mark the todo items as completed", () => {
-    const targetTodo = todos[0]; 
-    allTodoPage.visit().markTodoAsCompleted(targetTodo);
+    const targetTodo = todos[0];
+    cy.eyesOpen({
+      appName: "Todo App",
+      testName: "Should be able to mark the todo items as completed",
+    });
+    allTodoPage.visit();
     cy.eyesCheckWindow("Check completed todos marked");
   });
 });
