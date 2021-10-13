@@ -2,10 +2,7 @@
 
 describe("Testing the react app", () => {
   it("Should display 2 todos by default", () => {
-    cy.eyesOpen({
-      appName: "React app",
-      testName: "Should display 2 todos by default",
-    });
+  
     cy.visit("http://localhost:3000/");
     cy.wait(2000);
     cy.eyesCheckWindow("Default Page of React");
@@ -15,6 +12,3 @@ describe("Testing the react app", () => {
   });
 });
 
-afterEach(() => {
-  cy.eyesClose();
-});
