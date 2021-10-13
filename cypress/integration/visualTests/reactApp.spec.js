@@ -8,7 +8,7 @@ describe("Testing the react app", () => {
       testName: "Home Page of react",
     });
     cy.visit('http://localhost:3000/');
-    cy.eyesCheckWindow("Home Page");
+    cy.eyesCheckWindow("Home Page of react");
     cy.get('div:nth-child(2) > div.panel-body > button').click();
     cy.eyesCheckWindow("button 2 info")
   });

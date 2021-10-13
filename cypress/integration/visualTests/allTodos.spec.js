@@ -12,7 +12,7 @@ describe("ToDo HomePage Tests - All Todos", () => {
     });
 
     allTodoPage.visit();
-    cy.eyesCheckWindow("Home Page");
+    cy.eyesCheckWindow("Home Page of todo");
   });
 
   it("Should be able to add todo", () => {
