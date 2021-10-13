@@ -18,7 +18,7 @@ jobs:
         with:
           repository: aditya-sridhar/simple-reactjs-app
           path: './react_app_folder'
-      - name: RUNNING SHELL COMMANDS FOR BASE JOB
+      - name: Start React App
         working-directory: react_app_folder
         run: |
           echo RUNNING SHELL COMMANDS FOR BASE JOB                 
