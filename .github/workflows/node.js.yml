@@ -29,9 +29,9 @@ jobs:
           npm install
           npm run start
       - name: (CY) - Checkout to Base repo
-          uses: actions/checkout@v2
-          with:
-            path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
+        uses: actions/checkout@v2
+        with:
+          path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
       - name: (CY) - Using node version 12
         uses: actions/setup-node@v2
         with:
@@ -39,7 +39,7 @@ jobs:
       - name: (CY) - Install npm dependencies
         working-directory: cypress_tests
         run: npm i
-      - name:(CY) -  cypress tests 
+      - name: (CY) - cypress tests 
         working-directory: cypress_tests
         run: npx cypress run --record
         env:
