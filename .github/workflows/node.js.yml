@@ -19,6 +19,7 @@ jobs:
           repository: aditya-sridhar/simple-reactjs-app
           path: './react_app_folder'
       - name: RUNNING SHELL COMMANDS FOR BASE JOB
+        working-directory: react_app_folder
         run: |
           echo RUNNING SHELL COMMANDS FOR BASE JOB                 
           pwd
@@ -39,12 +40,16 @@ jobs:
       with:
         node-version: 12.x
         cache: 'npm'
-    - run: npm i
+    - name: Install npm dependencies
+      working-directory: cypress_tests
+      run: npm i
     - name: cypress tests 
+      working-directory: cypress_tests
       run: npx cypress run --record
       env:
         APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
         CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
     - name: PRINT INFO
+      working-directory: cypress_tests
       run: pwd
  
