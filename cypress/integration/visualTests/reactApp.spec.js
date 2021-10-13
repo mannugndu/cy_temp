@@ -10,7 +10,7 @@ describe("Testing the react app", () => {
     cy.wait(2000);
     cy.eyesCheckWindow("Default Page of React");
     cy.get("div:nth-child(2) > div.panel-body > button").click();
-    cy.wait(2000);
+    cy.wait(2100);
     cy.eyesCheckWindow("button 2 info");
   });
 });
