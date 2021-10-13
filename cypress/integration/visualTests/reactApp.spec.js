@@ -4,7 +4,7 @@ describe("Testing the react app", () => {
 
   it("Should display 2 todos by default", () => {
     cy.eyesOpen({
-      appName: "Todo App",
+      appName: "React app",
       testName: "Home Page of react",
     });
     cy.visit('http://localhost:3000/');

@@ -10,10 +10,10 @@ on:
     branches: [ master ]
 
 jobs:
-  start-react-app:
+ Run-Cypress-Tests:
     runs-on: ubuntu-latest   
     steps:
-      - name: "Checkout V2"
+      - name: "Checkout React App"
         uses: actions/checkout@v2
         with:
           repository: aditya-sridhar/simple-reactjs-app
