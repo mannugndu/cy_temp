@@ -1,7 +1,7 @@
 # This workflow will do a clean install of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: Node.js CI
+name: Cypress Tests
 
 on:
   push:
@@ -10,27 +10,66 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+ Run-Cypress-Tests:
+    runs-on: ubuntu-latest   
     steps:
-    - uses: actions/checkout@v2
-    - name: Using node version 12
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
-        cache: 'npm'
-    - run: npm i
-    - run: npx cypress run
-    
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout V2"
+      - name: "Checkout React App"
         uses: actions/checkout@v2
-      - name: RUNNING SHELL COMMANDS
+        with:
+          repository: aditya-sridhar/simple-reactjs-app
+          path: './react_app_folder'
+      - name: Start React App
+        working-directory: react_app_folder
         run: |
-          echo This is a simeplemessage
-          echo $SHELL
+          echo RUNNING SHELL COMMANDS FOR BASE JOB                 
           pwd
-          ls
+          echo ============================
+          ls         
+          echo ============================
+          npm install
+          npm run start &
+      - name: (CY) - Checkout to Base repo
+        uses: actions/checkout@v2
+        with:
+          path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
+      - name: (CY) - Using node version 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: 12.x        
+      - name: (CY) - Install npm dependencies
+        working-directory: cypress_tests
+        run: npm i
+      - name: (CY) - cypress tests 
+        working-directory: cypress_tests
+        run: npx cypress run --record
+        env:
+          APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+          CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
+      - name: (CY) - PRINT INFO
+        working-directory: cypress_tests
+        run: pwd
+
+  # run-cypress-tests:
+  #   runs-on: ubuntu-latest   
+  #   steps:      
+  #   - name: Checkout to Base repo
+  #     uses: actions/checkout@v2
+  #     with:
+  #       path: '/home/runner/work/cy_temp/cy_temp/cypress_tests'
+  #   - name: Using node version 12
+  #     uses: actions/setup-node@v2
+  #     with:
+  #       node-version: 12.x        
+  #   - name: Install npm dependencies
+  #     working-directory: cypress_tests
+  #     run: npm i
+  #   - name: cypress tests 
+  #     working-directory: cypress_tests
+  #     run: npx cypress run --record
+  #     env:
+  #       APPLITOOLS_API_KEY: jqKp1Z103kAAj1084c111h5YsfK9lAGDH5Sjc2ApJfEHIMplg110
+  #       CYPRESS_RECORD_KEY: acba9576-64a4-4072-b965-01b184a5098d
+  #   - name: PRINT INFO
+  #     working-directory: cypress_tests
+  #     run: pwd
  

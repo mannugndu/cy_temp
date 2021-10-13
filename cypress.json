@@ -1,7 +1,6 @@
 {
-  "projectId": "sphs8v",
+  "projectId": "6hku5p",
   "baseUrl": "https://example.cypress.io",
-  "reporter": "cypress-mochawesome-reporter",
   "viewportWidth": 1500,
   "viewportHeight": 1000
 }
