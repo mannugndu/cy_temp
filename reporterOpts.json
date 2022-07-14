@@ -1,8 +1,7 @@
   {
-    "reporterEnabled": "mochawesome, mocha-junit-reporter-updated",
+    "reporterEnabled": "mochawesome",
     "reporterOptions": {
       "reportDir":  "/tmp/cypress/reports/mocha",
-      "mochaFile": "/tmp/cypress/reports/mocha/cypress_junit_[suiteFilename].xml",
       "reportFilename": "[name]-report",
       "overwrite": true,
       "html": false,
