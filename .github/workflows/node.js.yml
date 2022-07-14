@@ -27,8 +27,12 @@ jobs:
       if: always()
       run: |
         node --version       
-        npm run merge_reports         
-        echo "LS mocha dir"
-        ls /tmp/cypress/reports/mocha
-        echo "pwd"
-        pwd
+        node_modules/.bin/mochawesome-merge --reportDir /tmp/cypress/reports/mocha/*.json > /tmp/cypress/reports/mocha/output.json
+        node_modules/.bin/marge /tmp/cypress/reports/mocha/output.json --reportDir /tmp/cypress/reports/mocha        
+
+    - uses: actions/upload-artifact@v2
+      if: always()
+      with:
+        name: Report
+        path: '/tmp/cypress/reports/mocha/output.html'
+        if-no-files-found: ignore
