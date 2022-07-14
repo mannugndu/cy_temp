@@ -20,7 +20,7 @@ jobs:
         node-version: 16.x
         cache: 'npm'
     - run: npm i
-    - run: npx cypress run
+    - run: npx cypress run --spec "./integration/todoAppTests/activeTodos.spec.js" --env a11yConfig=true
     
 
     - name: Export mochawesome report
