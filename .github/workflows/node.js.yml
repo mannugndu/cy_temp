@@ -5,7 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, feat-report]
   pull_request:
     branches: [ master ]
 
@@ -17,20 +17,18 @@ jobs:
     - name: Using node version 12
       uses: actions/setup-node@v2
       with:
-        node-version: 12.x
+        node-version: 16.x
         cache: 'npm'
     - run: npm i
     - run: npx cypress run
     
-  job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Checkout V2"
-        uses: actions/checkout@v2
-      - name: RUNNING SHELL COMMANDS
-        run: |
-          echo This is a simeplemessage
-          echo $SHELL
-          pwd
-          ls
- 
+
+    - name: Export mochawesome report
+      if: always()
+      run: |
+        node --version       
+        npm run merge_reports         
+        echo "LS mocha dir"
+        ls /tmp/cypress/reports/mocha
+        echo "pwd"
+        pwd

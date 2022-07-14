@@ -1,7 +1,10 @@
 {
   "projectId": "sphs8v",
   "baseUrl": "https://example.cypress.io",
-  "reporter": "cypress-mochawesome-reporter",
   "viewportWidth": 1500,
-  "viewportHeight": 1000
+  "viewportHeight": 1000,
+  "reporter": "mocha-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporterOpts.json"
+  }
 }

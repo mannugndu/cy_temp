@@ -1,5 +1,3 @@
-/// <reference types="cypress" />
-
 import ActiveTodosPage from "../../pages/activeTodoPage";
 
 describe("ToDo HomePage Tests - All Todos", () => {
