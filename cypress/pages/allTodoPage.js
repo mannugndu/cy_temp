@@ -4,7 +4,7 @@ class AllTodoPage extends BasePage {
   constructor() {
     super();
     this.locators = {
-      todoInputBox: " [data-test=new-todo]",
+      todoInputBox: " [data-test=newd-todo]",
       todoCheckBox: "input[type=checkbox]",
     };
     this.url = "/todo";

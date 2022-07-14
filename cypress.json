@@ -2,6 +2,7 @@
   "projectId": "sphs8v",
   "baseUrl": "https://example.cypress.io",
   "viewportWidth": 1500,
+  "screenshotsFolder": "snapshots/actual",
   "viewportHeight": 1000,
   "reporter": "mocha-multi-reporters",
   "reporterOptions": {

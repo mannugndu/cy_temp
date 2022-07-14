@@ -28,9 +28,8 @@ jobs:
       run: |
         node --version       
         node_modules/.bin/mochawesome-merge --reportDir /tmp/cypress/reports/mocha/*.json > /tmp/cypress/reports/mocha/output.json
-        node_modules/.bin/marge /tmp/cypress/reports/mocha/output.json --reportDir /tmp/cypress/reports/mocha   
-        ls /tmp/cypress/reports/mocha
-        cat /tmp/cypress/reports/mocha/output.html
+        node_modules/.bin/marge /tmp/cypress/reports/mocha/output.json --reportDir /tmp/cypress/reports/mocha               
+        cp -R snapshots/actual /tmp/cypress/reports/mocha/assets        
 
     - uses: actions/upload-artifact@v2
       if: always()
