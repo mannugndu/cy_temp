@@ -1,12 +1,14 @@
-{
-    "reporterEnabled": "mochawesome",
+  {
+    "reporterEnabled": "mochawesome, mocha-junit-reporter-updated",
     "reporterOptions": {
-      "charts": true,
-      "reportDir": "/tmp/cypress/reports/mocha",
+      "reportDir":  "/tmp/cypress/reports/mocha",
+      "mochaFile": "/tmp/cypress/reports/mocha/cypress_junit_[suiteFilename].xml",
       "reportFilename": "[name]-report",
-      "quiet": false,
       "overwrite": true,
       "html": false,
-      "json": true
+      "json": true,
+      "quiet": true,
+      "inline": true,
+      "showSkipped": true
     }
   }
