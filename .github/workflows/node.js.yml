@@ -36,5 +36,5 @@ jobs:
       if: always()
       with:
         name: Report
-        path: '/tmp/cypress/reports/mocha/output.html'
+        path: '/tmp/cypress/reports/mocha'
         if-no-files-found: ignore
